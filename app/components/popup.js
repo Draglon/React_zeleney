@@ -1,4 +1,5 @@
 var React = require('react');
+var Field = require('./form/Field.js');
 
 class Popup extends React.Component {
 
@@ -12,13 +13,28 @@ class Popup extends React.Component {
             text: "и получите бесплатную консультацию по зеленым системам Zeleney",
             items: ['Тел: (067) 256-82-99', '(095) 555-14-32', 'info@zeleney.com'],
 
-            placeholders: {
-                name: "Имя",
-                email: "Еmail*",
-                phone: "Телефон*",
-                comment: "Комментарий"
-            },
-            button: "Отправить",
+            form: [
+                {
+                    type: "text",
+                    placeholder: "Имя",
+                },
+                {
+                    type: "email",
+                    placeholder: "Еmail*"
+                },
+                {
+                    type: "tel",
+                    placeholder: "Телефон*"
+                },
+                {
+                    type: "textarea",
+                    placeholder: "Комментарий"
+                },
+                {
+                    type: "submit",
+                    value: "Отправить"
+                }
+            ],
             errors: {
                 email: "Укажите email",
                 phone: "Укажите телефон"
@@ -40,21 +56,13 @@ class Popup extends React.Component {
                         </ul>
 
                         <form className="form">
-                            <div className="form_field">
-                                <input type="text" className="form_input" placeholder="" />
-                            </div>
-                            <div className="form_field">
-                                <input type="email" className="form_input" placeholder="" />
-                            </div>
-                            <div className="form_field">
-                                <input type="tel" className="form_input" placeholder="" />
-                            </div>
-                            <div className="form_field">
-                                <textarea className="form_textarea" placeholder="" ></textarea>
-                            </div>
-                            <div className="form_field">
-                                <button className="btn" type="submit">{this.state.button}</button>
-                            </div>
+                            {this.state.form.map( (field, i) => <Field data={field} key={i} /> )}
+                            
+                                {/*                             
+                                <div className="form_field">
+                                    <button className="btn" type="submit">{this.state.button}</button>
+                                </div> */}
+
                             <ul className="field_errors">
                                 <li className="">{this.state.errors.email}</li>
                                 <li className="">{this.state.errors.phone}</li>
