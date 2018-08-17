@@ -9,15 +9,24 @@ var GreenWall = require('./pages/green_wall.js');
 var PhytoPicture = require('./pages/phyto_picture.js');
 var NotFound = require('./pages/notfound.js');
 var Footer = require('./footer.js');
-var Popup = require('./popup.js');
 
 const history = createBrowserHistory();
 
 class MainComponent extends React.Component {
+
+    // constructor(props) {
+    //     super(props);
+
+    //     this.state = {toggle: false};
+
+    //     this.togglePopup = () => this.setState({toggleActive: !toggle})
+    // }
+
     render() {
         return(
             <Router history={history}>
                 <div>
+                    {/* <Popup data={this.togglePopup} /> */}
                     <Header />
                     <Switch>
                         <Route path="/" exact component={Home} />

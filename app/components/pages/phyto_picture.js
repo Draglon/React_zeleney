@@ -14,11 +14,25 @@ var Section = require('../sections/Section.js');
 const dataPhytoPicture = require('./data/dataPhytoPicture.js');
 // const dataPhytoPicture = require('./dataOld/dataPhytoPicture.js');
 
+var Popup = require('../popup.js');
+
 class PhytoPicture extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {showPopup: false};
+
+        this.togglePopup = () => {
+            this.setState({showPopup: !this.state.showPopup});
+        }
+    }
+
     render() {
         return (
             <main className="main">
-                {dataPhytoPicture.sections.map( (section, index) => <Section data={section} key={index} /> ) }
+                {dataPhytoPicture.sections.map( (section, index) => <Section data={section} key={index} popup={this.togglePopup} /> ) }
+
                 {/* <SectionOrder data={dataPhytoPicture.sections[0]} />
                 <SectionBlock data={dataPhytoPicture.sections[1]} />
                 <SectionOxygen data={dataPhytoPicture.sections[2]} />
@@ -28,6 +42,8 @@ class PhytoPicture extends React.Component {
                 <SectionMyself data={dataPhytoPicture.sections[6]} />
                 <SectionPortfolio data={dataPhytoPicture.sections[7]} />
                 <SectionRequest data={dataPhytoPicture.sections[8]} /> */}
+                
+                {this.state.showPopup ? <Popup /> : null}
             </main>
         );
     }

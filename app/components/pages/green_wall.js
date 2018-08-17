@@ -14,11 +14,25 @@ var Section = require('../sections/Section.js');
 const dataGreenWall = require('./data/dataGreenWall.js');
 // const dataGreenWall = require('./dataOld/dataGreenWall.js');
 
+var Popup = require('../popup.js');
+
 class GreenWall extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {showPopup: false};
+
+        this.togglePopup = () => {
+            this.setState({showPopup: !this.state.showPopup});
+        }
+    }
+
     render() {
         return (
             <main className="main">
-                {dataGreenWall.sections.map( (section, index) => <Section data={section} key={index} /> ) }
+                {dataGreenWall.sections.map( (section, index) => <Section data={section} key={index} popup={this.togglePopup} /> ) }
+
                 {/* <SectionOrder data={dataGreenWall.sections[0]} />
                 <SectionBlock data={dataGreenWall.sections[1]} />
                 <SectionOxygen data={dataGreenWall.sections[2]} />
@@ -29,6 +43,8 @@ class GreenWall extends React.Component {
                 <SectionDelivery data={dataGreenWall.sections[7]} />
                 <SectionPortfolio data={dataGreenWall.sections[8]} />
                 <SectionRequest data={dataGreenWall.sections[9]} /> */}
+
+                {this.state.showPopup ? <Popup /> : null}
             </main>
         );
     }

@@ -25,7 +25,8 @@ class Section extends React.Component {
             className: "section " + this.props.data.className,
             title: this.props.data.title,
             section: this.props.data.section,
-            content: this.props.data.content
+            content: this.props.data.content,
+            popup: this.props.popup
         };
     }
 
@@ -33,13 +34,14 @@ class Section extends React.Component {
         return (
             <section className={this.state.className}>
                 {this.state.title ? <SectionHeader data={this.state.title} /> : null }
-                {(this.state.section==="main") ? <SectionMain data={this.state.content} /> : null }
+
+                {(this.state.section==="main") ? <SectionMain data={this.state.content} popup={this.state.popup} /> : null }
                 {(this.state.section==="info") ? <SectionInfo data={this.state.content} /> : null }
                 {(this.state.section==="category") ? <SectionCategory data={this.state.content} /> : null }
                 {(this.state.section==="portfolio") ? <SectionPortfolio data={this.state.content} /> : null }
-                {(this.state.section==="request") ? <SectionRequest data={this.state.content} /> : null }
+                {(this.state.section==="request") ? <SectionRequest data={this.state.content} popup={this.state.popup} /> : null }
 
-                {(this.state.section==="order") ? <SectionOrder data={this.state.content} /> : null }
+                {(this.state.section==="order") ? <SectionOrder data={this.state.content} popup={this.state.popup} /> : null }
                 {(this.state.section==="tile") ? <SectionTile data={this.state.content} /> : null }
                 {(this.state.section==="oxygen") ? <SectionOxygen data={this.state.content} /> : null }
                 {(this.state.section==="simpleCare") ? <SectionSimpleCare data={this.state.content} /> : null }

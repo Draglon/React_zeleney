@@ -10,31 +10,31 @@ class SectionOrder extends React.Component {
             title: this.props.data.title,
             subTitle: this.props.data.subTitle,
             items: this.props.data.items,
-            button: this.props.data.button
+            button: this.props.data.button,
+
+            popup: this.props.popup
         };
     }
 
     render() {
         return (
-            // <section className="section order" style={{backgroundImage: this.state.mainBG}}>
-                <div className="wrapper">
-                    <div className="order_sidebar">
-                        <h2 className="order_title">{this.state.title}</h2>
+            <div className="wrapper">
+                <div className="order_sidebar">
+                    <h2 className="order_title">{this.state.title}</h2>
 
-                        <p className="order_subtitle" dangerouslySetInnerHTML={{__html: this.state.subTitle}}></p>
+                    <p className="order_subtitle" dangerouslySetInnerHTML={{__html: this.state.subTitle}}></p>
 
-                        <ul className="order_list">
-                            {
-                                this.state.items.map(function(item, i) {
-                                    return <li className="order_item" key={i}>{item}</li>
-                                })
-                            }
-                        </ul>
+                    <ul className="order_list">
+                        {
+                            this.state.items.map(function(item, i) {
+                                return <li className="order_item" key={i}>{item}</li>
+                            })
+                        }
+                    </ul>
 
-                        <button className="btn btn-purple order_btn">{this.state.button}</button>
-                    </div>
+                    <button className="btn btn-purple order_btn" onClick={this.state.popup}>{this.state.button}</button>
                 </div>
-            // </section>
+            </div>
         );
     }
 }

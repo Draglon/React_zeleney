@@ -1,4 +1,5 @@
 var React = require('react');
+var Popup = require('../../popup.js');
 
 class SectionMain extends React.Component {
 
@@ -9,7 +10,9 @@ class SectionMain extends React.Component {
             title: this.props.data.title,
             subTitle: this.props.data.subTitle,
             button: this.props.data.button,
-            items: this.props.data.items
+            items: this.props.data.items,
+
+            popup: this.props.popup
         };
     }
 
@@ -25,7 +28,7 @@ class SectionMain extends React.Component {
                 </ul>
                 <h1 className="title">{this.state.title}</h1>
                 <h2 className="sub-title">{this.state.subTitle}</h2>
-                <button className="btn btn-yellow btn-consultation">{this.state.button}</button>
+                <button className="btn btn-yellow btn-consultation" onClick={this.state.popup}>{this.state.button}</button>
             </div>
         );
     }
