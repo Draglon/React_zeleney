@@ -13,20 +13,10 @@ var Footer = require('./footer.js');
 const history = createBrowserHistory();
 
 class MainComponent extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {toggle: false};
-
-    //     this.togglePopup = () => this.setState({toggleActive: !toggle})
-    // }
-
     render() {
         return(
             <Router history={history}>
                 <div>
-                    {/* <Popup data={this.togglePopup} /> */}
                     <Header />
                     <Switch>
                         <Route path="/" exact component={Home} />
