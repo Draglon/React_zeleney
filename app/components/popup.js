@@ -55,18 +55,13 @@ class Popup extends React.Component {
                             {this.state.items.map( (item, i) => <li className="popup_info-item" key={i}>{item}</li> )}
                         </ul>
 
-                        <form className="form">
+                        <form className="form form_request">
                             {this.state.form.map( (field, i) => <Field data={field} key={i} /> )}
-                            
-                                {/*                             
-                                <div className="form_field">
-                                    <button className="btn" type="submit">{this.state.button}</button>
-                                </div> */}
 
-                            <ul className="field_errors">
-                                <li className="">{this.state.errors.email}</li>
-                                <li className="">{this.state.errors.phone}</li>
-                            </ul>
+                            <div className="form_errors">
+                                <div className="form_errors-item">{this.state.errors.email}</div>
+                                <div className="form_errors-item">{this.state.errors.phone}</div>
+                            </div>
                         </form>
                     </div>
                 </div>
