@@ -1,4 +1,5 @@
 var React = require('react');
+var Slider = require('./data/slider.js');
 
 class SectionPortfolio extends React.Component {
 
@@ -6,22 +7,14 @@ class SectionPortfolio extends React.Component {
         super(props);
 
         this.state = {
-            
+            slider: this.props.data.slider
         };
     }
 
     render() {
         return (
             <div className="portfolio_content">
-                <div className="slider">
-                    <div className="slider-wrapper">
-                        <div className="slider_container">
-                            <div className="slider_item"></div>
-                            <div className="slider_item"></div>
-                            <div className="slider_item"></div>
-                        </div>
-                    </div>
-                </div>
+                <Slider data={this.state.slider} />
             </div>
         );
     }
