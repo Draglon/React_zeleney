@@ -63,23 +63,28 @@ export const sections = [
             slider: [
                 {
                     url: require('../../../images/gallery/slide_1.jpg'),
-                    label: "<b>Kyiv</b>, Office<br/> De Novo Company"
+                    label: "<b>Kyiv</b>, Office<br/> De Novo Company",
+                    alt: ""
                 },
                 {
                     url: require('../../../images/gallery/slide_2.jpg'),
-                    label: "<b>Kyiv</b>, Private Apartment,<br/>Design by <b>Home it</b>"
+                    label: "<b>Kyiv</b>, Private Apartment,<br/>Design by <b>Home it</b>",
+                    alt: ""
                 },
                 {
                     url: require('../../../images/gallery/slide_3.jpg'),
-                    label: "<b>Kyiv</b>, Private Apartment in Royal Tower,<br/>Design by <b>Martin architects</b>"
+                    label: "<b>Kyiv</b>, Private Apartment in Royal Tower,<br/>Design by <b>Martin architects</b>",
+                    alt: ""
                 },
                 {
                     url: require('../../../images/gallery/slide_4.jpg'),
-                    label: ""
+                    label: "",
+                    alt: ""
                 },
                 {
                     url: require('../../../images/gallery/slide_5.jpg'),
-                    label: ""
+                    label: "",
+                    alt: ""
                 }
             ]
         }
