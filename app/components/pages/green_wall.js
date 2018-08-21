@@ -44,7 +44,7 @@ class GreenWall extends React.Component {
                 <SectionPortfolio data={dataGreenWall.sections[8]} />
                 <SectionRequest data={dataGreenWall.sections[9]} /> */}
 
-                {this.state.showPopup ? <Popup /> : null}
+                {this.state.showPopup ? <Popup popup={this.togglePopup} /> : null}
             </main>
         );
     }

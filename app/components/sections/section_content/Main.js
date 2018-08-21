@@ -1,5 +1,4 @@
 var React = require('react');
-var Popup = require('../../popup.js');
 
 class SectionMain extends React.Component {
 

@@ -43,7 +43,7 @@ class PhytoPicture extends React.Component {
                 <SectionPortfolio data={dataPhytoPicture.sections[7]} />
                 <SectionRequest data={dataPhytoPicture.sections[8]} /> */}
                 
-                {this.state.showPopup ? <Popup /> : null}
+                {this.state.showPopup ? <Popup popup={this.togglePopup} /> : null}
             </main>
         );
     }
