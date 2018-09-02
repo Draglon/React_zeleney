@@ -22,6 +22,7 @@
     "group-css-media-queries-loader": "^1.0.4",
     "html-webpack-plugin": "^2.29.0",
     "image-webpack-loader": "^4.3.1",
+    "json-loader": "^0.5.7",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "node-less": "^1.0.0",
@@ -35,8 +36,11 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
+    "mongodb": "^3.1.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",
